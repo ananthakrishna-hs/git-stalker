@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <a class="navbar-brand" [routerLink]="'.'">GitStalker</a>
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    &#9776;
+  </button>
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item active form-inline">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input class="form-control mr-2" [(ngModel)]="searchText"
+            type="text" placeholder="username" aria-label="Search"
+          >
+        </div>
+        <button class="btn btn-outline-success m-2" type="submit" (click)="formButtonsHandler($event, true)">
+          Search
+        </button>
+        <button class="btn link m-2" type="reset" (click)="formButtonsHandler($event, false)">
+          Clear
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
