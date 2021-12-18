@@ -7,4 +7,6 @@ export interface IGetUserResponse {
   public_repos: number;
   twitter_username: string;
   location: string;
+  message: string;
+  bio: string;
 }

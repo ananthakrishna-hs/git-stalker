@@ -1,0 +1,25 @@
+<div class="card custom-card">
+  <img [src]="userInfo?.avatar_url" [alt]="userInfo?.name + 'avatar'" class="card-img-top">
+  <div class="card-body text-center">
+    <h5 class="card-title">
+      {{ userInfo?.name }}
+    </h5>
+    <h6 class="card-subtitle text-muted mb-2">
+      {{ userInfo?.bio}}
+    </h6>
+    <p class="card-text text-center">
+      <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+      {{ userInfo?.location ? userInfo?.location : 'NA' }}
+    </p>
+    <p class="card-text text-center">
+      <fa-icon [icon]="faTwitter"></fa-icon>
+      {{ userInfo?.twitter_username ? userInfo?.twitter_username : 'NA' }}
+    </p>
+    <p class="card-text text-center">
+      <span class="profile-link" title="Click to copy" (click)="copyTextToClipboard(userInfo?.html_url)">
+        <fa-icon [icon]="faLink"></fa-icon>
+        {{ userInfo?.html_url ? userInfo?.html_url : 'NA' }}
+      </span>
+    </p>
+  </div>
+</div>

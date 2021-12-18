@@ -2,3 +2,14 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.loader.modal {
+  .modal-content {
+    background-color: transparent;
+    border: none;
+
+    .ng-fa-icon {
+      margin: 0 auto;
+    }
+  }
+}

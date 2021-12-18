@@ -6,13 +6,19 @@
 <div class="container-fluid">
   <div class="row mt-4">
     <div class="col-12">
-      <div class="alert alert-info" role="alert">
+      <div *ngIf="!showInfo" class="alert alert-info" role="alert">
         <h4 class="alert-heading">Hey there stalker!</h4>
         <p>View an user's github repos by searching in the search bar above.</p>
         <hr>
         <p class="font-weight-bold">You need to enter user's exact username.</p>
       </div>
+
+      <app-user-info *ngIf="showInfo" [userInfo]="userInfo"></app-user-info>
     </div>
   </div>
 </div>
+
+<ng-template #loader let-modal>
+  <fa-icon [icon]="faSpinner" [pulse]="true" [size]="'10x'"></fa-icon>
+</ng-template>
 
