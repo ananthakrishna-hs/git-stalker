@@ -1,27 +1,23 @@
 # GitStalker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2. Search any user and user's public repository's list using exact user name.
 
 ## Development server
+> Needs [Node.js](https://nodejs.org/en/) to be installed!
+- Run `npm install` in the root of the project.
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Assumptions
+- Exact username to be entered on the search bar.
+- Maximum number of repositories per page is fixed to 10, but configurable.
+- Rate limit applicable as per GitHub REST API policy.
+- Sort of results only on _created time_.
+- Application hierarchy as per abstraction and for further enhancements.
 
-## Code scaffolding
+## Solution
+- Username to be searched in search bar in the header (and inside collapse for smaller screens).
+- Uses Ng-Bootstrap purely for styling and standard widgets.
+- Decomposes application into abstracted components and interacts through data-bainding and event-emitters.
+- Uses BehaviorSubject to track loader status, which is used for all API calls made in interceptor.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
