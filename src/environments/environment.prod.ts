@@ -3,4 +3,3 @@ export const environment = {
   git_endpoint: 'https://api.github.com/users/',
   max_repos_per_page: 10
 };
-};
