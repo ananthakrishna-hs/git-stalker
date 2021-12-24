@@ -10,3 +10,11 @@ export interface IGetUserResponse {
   message: string;
   bio: string;
 }
+
+export interface IRepository {
+  id: number;
+  name: string;
+  html_url: string;
+  language: string;
+  description: string;
+}

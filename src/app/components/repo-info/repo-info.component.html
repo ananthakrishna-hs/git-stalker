@@ -1,0 +1,17 @@
+<div class="card custom-card m-2">
+  <div class="card-body">
+    <h6 class="card-title">
+      <a [href]="repo?.html_url" target="_blank">
+        {{ repo?.name }}
+      </a>
+    </h6>
+    <h6 class="card-subtitle text-muted mb-2">
+      {{ repo?.description}}
+    </h6>
+    <p *ngIf="repo?.language" class="card-text">
+      <span class="badge badge-primary">
+        {{ repo?.language }}
+      </span>
+    </p>
+  </div>
+</div>

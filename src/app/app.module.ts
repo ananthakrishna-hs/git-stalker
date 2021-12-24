@@ -10,12 +10,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RepoInfoComponent } from './components/repo-info/repo-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    RepoInfoComponent
   ],
   imports: [
     BrowserModule,

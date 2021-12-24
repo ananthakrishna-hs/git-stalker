@@ -20,6 +20,15 @@ export class ApiService {
     return this.client.get(environment.git_endpoint + username);
   }
 
+  fetchRepos(username: string, pageNumber: number, direction: 'asc' | 'desc'): Observable<Object> {
+    return this.client.get(environment.git_endpoint + username + '/repos?' +
+      `sort=created&` +
+      `direction=${direction}&` +
+      `per_page=${environment.max_repos_per_page}&` +
+      `page=${pageNumber}`
+    );
+  }
+
   getLoaderStatus(): Observable<boolean> {
     return this.getLoader;
   }

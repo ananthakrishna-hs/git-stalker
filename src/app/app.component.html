@@ -16,6 +16,34 @@
       <app-user-info *ngIf="showInfo" [userInfo]="userInfo"></app-user-info>
     </div>
   </div>
+  <div *ngIf="showRepos" class="row mt-2 justify-content-center">
+    <div class="col-12">
+      <p class="text-center">
+        Sort by created:
+        <fa-icon class="sort-icon" *ngIf="direction === 'asc'"
+          [icon]="faSortUp" [size]="'2x'" (click)="toggleSort('desc')"
+        >
+        </fa-icon>
+        <fa-icon class="sort-icon" *ngIf="direction === 'desc'"
+          [icon]="faSortDown" [size]="'2x'" (click)="toggleSort('asc')"
+        >
+        </fa-icon>
+      </p>
+    </div>
+  </div>
+  <div *ngIf="showRepos" class="row mt-4">
+    <div *ngFor="let repo of repositories;" class="col-12 col-sm-6 col-md-4">
+      <app-repo-info [repo]="repo"></app-repo-info>
+    </div>
+  </div>
+  <div *ngIf="showRepos" class="row mt-4 justify-content-center">
+    <div class="col-12">
+      <ngb-pagination [collectionSize]="totalRepos" [(page)]="pageNumber"
+        [maxSize]="3" [boundaryLinks]="true" (pageChange)="getRepos()"
+      >
+      </ngb-pagination>
+    </div>
+  </div>
 </div>
 
 <ng-template #loader let-modal>
